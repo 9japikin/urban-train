@@ -14104,20 +14104,8 @@ ObjectDelete(" H4zigzagShortEntry ");
 // --- Detect Conditions Only ---
 bool potentialBuyCond307 =
    (
-      ( N1zigzagLongEntry  > 0 && N1ZZZ3  == GetLowestPointAfterDailyHigh() && ( N1ZZZ1  < PivotAtLowestPointAfterDailyHighM1() || N1ZZZ1  < GetHighAtLowestPointAfterDailyHighM1() ) ) ||
-      ( N5zigzagLongEntry  > 0 && N5ZZZ3  == GetLowestPointAfterDailyHigh() && ( N5ZZZ1  < PivotAtLowestPointAfterDailyHighM1() || N5ZZZ1  < GetHighAtLowestPointAfterDailyHighM1() ) ) ||
-      ( N15zigzagLongEntry > 0 && N15ZZZ3 == GetLowestPointAfterDailyHigh() && ( N15ZZZ1 < PivotAtLowestPointAfterDailyHighM1() || N15ZZZ1 < GetHighAtLowestPointAfterDailyHighM1() ) ) ||
-      ( N30zigzagLongEntry > 0 && N30ZZZ3 == GetLowestPointAfterDailyHigh() && ( N30ZZZ1 < PivotAtLowestPointAfterDailyHighM1() || N30ZZZ1 < GetHighAtLowestPointAfterDailyHighM1() ) ) ||
-      ( G1zigzagLongEntry  > 0 && G1ZZZ3  == GetLowestPointAfterDailyHigh() && ( G1ZZZ1  < PivotAtLowestPointAfterDailyHighM1() || G1ZZZ1  < GetHighAtLowestPointAfterDailyHighM1() ) ) ||
-      ( G4zigzagLongEntry  > 0 && G4ZZZ3  == GetLowestPointAfterDailyHigh() && ( G4ZZZ1  < PivotAtLowestPointAfterDailyHighM1() || G4ZZZ1  < GetHighAtLowestPointAfterDailyHighM1() ) ) ||
-
-      ( zigzagLongEntry    > 0 && ZZZ3    == GetLowestPointAfterDailyHigh() && ( ZZZ1    < PivotAtLowestPointAfterDailyHighM1() || ZZZ1    < GetHighAtLowestPointAfterDailyHighM1() ) ) ||
-      ( M5zigzagLongEntry  > 0 && M5ZZZ3  == GetLowestPointAfterDailyHigh() && ( M5ZZZ1  < PivotAtLowestPointAfterDailyHighM1() || M5ZZZ1  < GetHighAtLowestPointAfterDailyHighM1() ) ) ||
-      ( M15zigzagLongEntry > 0 && M15ZZZ3 == GetLowestPointAfterDailyHigh() && ( M15ZZZ1 < PivotAtLowestPointAfterDailyHighM1() || M15ZZZ1 < GetHighAtLowestPointAfterDailyHighM1() ) ) ||
-      ( M30zigzagLongEntry > 0 && M30ZZZ3 == GetLowestPointAfterDailyHigh() && ( M30ZZZ1 < PivotAtLowestPointAfterDailyHighM1() || M30ZZZ1 < GetHighAtLowestPointAfterDailyHighM1() ) ) ||
-      ( H1zigzagLongEntry  > 0 && H1ZZZ3  == GetLowestPointAfterDailyHigh() && ( H1ZZZ1  < PivotAtLowestPointAfterDailyHighM1() || H1ZZZ1  < GetHighAtLowestPointAfterDailyHighM1() ) ) ||
-      ( H4zigzagLongEntry  > 0 && H4ZZZ3  == GetLowestPointAfterDailyHigh() && ( H4ZZZ1  < PivotAtLowestPointAfterDailyHighM1() || H4ZZZ1  < GetHighAtLowestPointAfterDailyHighM1() ) )
-   
+      ( N1zigzagLongEntry  > 0 && N1ZZZ3  == GetLowestPointAfterDailyHigh() && ( N1ZZZ1  < PivotAtLowestPointAfterDailyHighM1() || N1ZZZ1  < GetHighAtLowestPointAfterDailyHighM1() ) ) 
+    
    
    );
 
@@ -14143,19 +14131,7 @@ if(potentialBuyCond307)
     // --- Detect Conditions Only ---
    bool potentialSellCond307 = 
        
-       (( N1zigzagShortEntry > 0 && N1ZZZ3 == GetHighestPointAfterDailyLow() &&  (( N1ZZZ1 > PivotAtHighestPointAfterDailyLowM1() ) || (N1ZZZ1 > GetLowAtHighestPointAfterDailyLowM1()) )  )||
-    ( N5zigzagShortEntry > 0 && N5ZZZ3 == GetHighestPointAfterDailyLow() &&  (( N5ZZZ1 > PivotAtHighestPointAfterDailyLowM1() ) || (N5ZZZ1 > GetLowAtHighestPointAfterDailyLowM1()) )  )||
-    ( N15zigzagShortEntry > 0 && N15ZZZ3 == GetHighestPointAfterDailyLow() &&  (( N15ZZZ1 > PivotAtHighestPointAfterDailyLowM1() ) || (N15ZZZ1 > GetLowAtHighestPointAfterDailyLowM1()) )  )||
-    ( N30zigzagShortEntry > 0 && N30ZZZ3 == GetHighestPointAfterDailyLow() &&  (( N30ZZZ1 > PivotAtHighestPointAfterDailyLowM1() ) || (N30ZZZ1 > GetLowAtHighestPointAfterDailyLowM1()) )  )||
-    ( G1zigzagShortEntry > 0 && G1ZZZ3 == GetHighestPointAfterDailyLow() &&  (( G1ZZZ1 > PivotAtHighestPointAfterDailyLowM1() ) || (G1ZZZ1 > GetLowAtHighestPointAfterDailyLowM1()) )  )||
-    ( G4zigzagShortEntry > 0 && G4ZZZ3 == GetHighestPointAfterDailyLow() &&  (( G4ZZZ1 > PivotAtHighestPointAfterDailyLowM1() ) || (G4ZZZ1 > GetLowAtHighestPointAfterDailyLowM1()) )  )||
-
-    ( zigzagShortEntry > 0 && ZZZ3 == GetHighestPointAfterDailyLow() &&  (( ZZZ1 > PivotAtHighestPointAfterDailyLowM1() ) || (ZZZ1 > GetLowAtHighestPointAfterDailyLowM1()) ) )||
-    ( M5zigzagShortEntry > 0 && M5ZZZ3 == GetHighestPointAfterDailyLow() &&  (( M5ZZZ1 > PivotAtHighestPointAfterDailyLowM1() ) || (M5ZZZ1 > GetLowAtHighestPointAfterDailyLowM1()) )  )||
-    ( M15zigzagShortEntry > 0 && M15ZZZ3 == GetHighestPointAfterDailyLow() &&  (( M15ZZZ1 > PivotAtHighestPointAfterDailyLowM1() ) || (M15ZZZ1 > GetLowAtHighestPointAfterDailyLowM1()) )  )||
-    ( M30zigzagShortEntry > 0 && M30ZZZ3 == GetHighestPointAfterDailyLow() &&  (( M30ZZZ1 > PivotAtHighestPointAfterDailyLowM1() ) || (M30ZZZ1 > GetLowAtHighestPointAfterDailyLowM1()) )  )||
-    ( H1zigzagShortEntry > 0 && H1ZZZ3 == GetHighestPointAfterDailyLow() &&  (( H1ZZZ1 > PivotAtHighestPointAfterDailyLowM1() ) || (H1ZZZ1 > GetLowAtHighestPointAfterDailyLowM1()) )  )||
-    ( H4zigzagShortEntry > 0 && H4ZZZ3 == GetHighestPointAfterDailyLow() &&  (( H4ZZZ1 > PivotAtHighestPointAfterDailyLowM1() ) || (H4ZZZ1 > GetLowAtHighestPointAfterDailyLowM1()) )  ))
+       (( N1zigzagShortEntry > 0 && N1ZZZ3 == GetHighestPointAfterDailyLow() &&  (( N1ZZZ1 > PivotAtHighestPointAfterDailyLowM1() ) || (N1ZZZ1 > GetLowAtHighestPointAfterDailyLowM1()) )  ))
     
       
       
