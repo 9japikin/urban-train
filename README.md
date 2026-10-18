@@ -14406,7 +14406,6 @@ if(potentialBuyCond308)
   
                && iTime("EURUSD", 0, iHighest("EURUSD", 0, MODE_HIGH, DayStartShift + 1, 1)) > iTime("EURUSD", 0, iLowest("EURUSD", 0, MODE_LOW, DayStartShift + 1, 1))
 
-      && TrendBullishGBPUSD() && TrendBullishEURUSD()
           
           
              &&  GBPUSD_GetLargestBullishM1_Time(20) >= GBPUSD_GetLowestPointAfterDailyHighTimeOnM1() && EURUSD_GetLargestBullishM1_Time( 20) >= EURUSD_GetLowestPointAfterDailyHighTimeOnM1()
@@ -14512,7 +14511,6 @@ if(potentialBuyCond308)
    {
       if(TradeTimeAllowed() == true 
         
-          && TrendBearishGBPUSD() && TrendBearishEURUSD()
           
          
           
