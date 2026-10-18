@@ -100,6 +100,16 @@ double g_LastDailyLow  = 0;
 datetime g_LastDailyUpdate = 0;
 
 
+
+//--- Global variables
+
+input ENUM_TIMEFRAMES TrendTF       = PERIOD_H4;
+input int    TrendSMA               = 50;
+
+
+
+
+
  // Global scope
 bool buyCondMet307 = false;
 bool sellCondMet307 = false;
@@ -186,6 +196,113 @@ extern double LotSize                 = 2.11;
 extern double StopLossPadding         = 1.0;
 extern double TakeProfitPoints        = 30.0;
 extern int    MagicNumber             = 9129951; // HFM master magic - must stay unique on the HFM account
+
+
+
+
+
+
+ 
+//+------------------------------------------------------------------+
+//| Modified Helper Function for Centered Labels                     |
+//+------------------------------------------------------------------+
+void CreateCenteredLabel(string name, string text, color clr, int xDist, int yDist)
+  {
+   if(ObjectFind(0, name) < 0)
+      ObjectCreate(0, name, OBJ_LABEL, 0, 0, 0);
+
+   ObjectSetString(0, name, OBJPROP_TEXT, text);
+   ObjectSetString(0, name, OBJPROP_FONT, "Arial Bold");
+   ObjectSetInteger(0, name, OBJPROP_FONTSIZE, 14); // Slightly larger for visibility
+   ObjectSetInteger(0, name, OBJPROP_COLOR, clr);
+
+// Set corner to Top-Left but use Center Anchor to align the middle of the text
+   ObjectSetInteger(0, name, OBJPROP_CORNER, CORNER_LEFT_UPPER);
+   ObjectSetInteger(0, name, OBJPROP_ANCHOR, ANCHOR_CENTER);
+
+   ObjectSetInteger(0, name, OBJPROP_XDISTANCE, xDist);
+   ObjectSetInteger(0, name, OBJPROP_YDISTANCE, yDist);
+   ObjectSetInteger(0, name, OBJPROP_SELECTABLE, false);
+   ObjectSetInteger(0, name, OBJPROP_HIDDEN, true);
+  }
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//+------------------------------------------------------------------+
+//| Trend filter (closed candle)                                     |
+//+------------------------------------------------------------------+
+bool TrendBullish()
+  {
+   double ma = iMA(NULL, TrendTF, TrendSMA, 0, MODE_SMA, PRICE_CLOSE, 1);
+   double cl = iClose(NULL, TrendTF, 1);
+   return (cl > ma);
+  }
+
+//+------------------------------------------------------------------+
+//|                                                                  |
+//+------------------------------------------------------------------+
+bool TrendBearish()
+  {
+   double ma = iMA(NULL, TrendTF, TrendSMA, 0, MODE_SMA, PRICE_CLOSE, 1);
+   double cl = iClose(NULL, TrendTF, 1);
+   return (cl < ma);
+  }
+
+
+
+//+------------------------------------------------------------------+
+//| Trend filter (closed candle)                                     |
+
+//+------------------------------------------------------------------+
+
+//+------------------------------------------------------------------+
+
+
+//+------------------------------------------------------------------+
+//|                                                                  |
+//+------------------------------------------------------------------+
+bool TrendBearishGBPUSD()
+  {
+   double ma = iMA("GBPUSD", TrendTF, TrendSMA, 0, MODE_SMA, PRICE_CLOSE, 1);
+   double cl = iClose("GBPUSD", TrendTF, 1);
+   return (cl < ma);
+  }
+
+//+------------------------------------------------------------------+
+//|                                                                  |
+//+------------------------------------------------------------------+
+bool TrendBullishGBPUSD()
+  {
+   double ma = iMA("GBPUSD", TrendTF, TrendSMA, 0, MODE_SMA, PRICE_CLOSE, 1);
+   double cl = iClose("GBPUSD", TrendTF, 1);
+   return (cl > ma);
+  }
+
+//+------------------------------------------------------------------+
+//|                                                                  |
+//+------------------------------------------------------------------+
+bool TrendBullishEURUSD()
+  {
+   double ma = iMA("EURUSD", TrendTF, TrendSMA, 0, MODE_SMA, PRICE_CLOSE, 1);
+   double cl = iClose("EURUSD", TrendTF, 1);
+   return (cl > ma);
+  }
+
+//+------------------------------------------------------------------+
+//|                                                                  |
+//+------------------------------------------------------------------+
+bool TrendBearishEURUSD()
+  {
+   double ma = iMA("EURUSD", TrendTF, TrendSMA, 0, MODE_SMA, PRICE_CLOSE, 1);
+   double cl = iClose("EURUSD", TrendTF, 1);
+   return (cl > ma);
+  }
+
+
+
+
+
+
 
 double GetPipMultiplier(string sym)
 {
@@ -14289,7 +14406,7 @@ if(potentialBuyCond308)
   
                && iTime("EURUSD", 0, iHighest("EURUSD", 0, MODE_HIGH, DayStartShift + 1, 1)) > iTime("EURUSD", 0, iLowest("EURUSD", 0, MODE_LOW, DayStartShift + 1, 1))
 
-     
+      && TrendBullishGBPUSD() && TrendBullishEURUSD()
           
           
              &&  GBPUSD_GetLargestBullishM1_Time(20) >= GBPUSD_GetLowestPointAfterDailyHighTimeOnM1() && EURUSD_GetLargestBullishM1_Time( 20) >= EURUSD_GetLowestPointAfterDailyHighTimeOnM1()
@@ -14393,6 +14510,9 @@ if(potentialBuyCond308)
    {
       if(TradeTimeAllowed() == true 
         
+          && TrendBearishGBPUSD() && TrendBearishEURUSD()
+          
+          
            && iTime("GBPUSD", 0, iLowest("GBPUSD", 0, MODE_LOW, DayStartShift + 1, 1)) > iTime("GBPUSD", 0, iHighest("GBPUSD", 0, MODE_HIGH, DayStartShift + 1, 1))
   
         && iTime("EURUSD", 0, iLowest("EURUSD", 0, MODE_LOW, DayStartShift + 1, 1)) > iTime("EURUSD", 0, iHighest("EURUSD", 0, MODE_HIGH, DayStartShift + 1, 1))
