@@ -14436,6 +14436,8 @@ if(potentialBuyCond308)
         && ( ( N1zigzagLongEntry  > 0 && iOpen(NULL, PERIOD_M1, 0) < N1zigzagLongEntry  && iClose(NULL, PERIOD_M1, 0) > N1zigzagLongEntry  && N1ZZZ3  == GetLowestPointAfterDailyHigh() && ( N1ZZZ1  < PivotAtLowestPointAfterDailyHighM1() || N1ZZZ1  < GetHighAtLowestPointAfterDailyHighM1() ) ) )
           
         
+        && (  M5LowerLow_on_M1timefame() == N1ZZZ3 && GetLowestPointAfterDailyHigh() == N1ZZZ1 )
+        
  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         
@@ -14512,6 +14514,7 @@ if(potentialBuyCond308)
         
           && TrendBearishGBPUSD() && TrendBearishEURUSD()
           
+         
           
            && iTime("GBPUSD", 0, iLowest("GBPUSD", 0, MODE_LOW, DayStartShift + 1, 1)) > iTime("GBPUSD", 0, iHighest("GBPUSD", 0, MODE_HIGH, DayStartShift + 1, 1))
   
@@ -14540,7 +14543,8 @@ if(potentialBuyCond308)
         && ( ( N1zigzagShortEntry  > 0 && iOpen(NULL, PERIOD_M1, 0) > N1zigzagShortEntry  && iClose(NULL, PERIOD_M1, 0) < N1zigzagShortEntry  && N1ZZZ3  == GetHighestPointAfterDailyLow() && ( N1ZZZ1  > PivotAtHighestPointAfterDailyLowM1() || N1ZZZ1  > GetLowAtHighestPointAfterDailyLowM1() ) ) ) 
            
         
-        
+              &&  ( M5HigherHigh_on_M1timeframe() == N1ZZZ3 && GetHighestPointAfterDailyLow() == N1ZZZ1 ) 
+
         
         
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
