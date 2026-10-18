@@ -14329,19 +14329,6 @@ if(potentialBuyCond308)
             
             && GBPUSD_GetLowestPointAfterDailyHighTimeOnM1() > 0 && EURUSD_GetLowestPointAfterDailyHighTimeOnM1() > 0 && MathAbs((double)(GBPUSD_GetLowestPointAfterDailyHighTimeOnM1() - EURUSD_GetLowestPointAfterDailyHighTimeOnM1())) <= 30 * 60
             
-        
-     && ( ( M5LowerLow_on_M1timefame() == N1ZZZ3 && GetLowestPointAfterDailyHigh() == N1ZZZ1 )||
-        ( M5LowerLow_on_M1timefame() == N5ZZZ3 && GetLowestPointAfterDailyHigh() == N5ZZZ1 )||
-        ( M5LowerLow_on_M1timefame() == N15ZZZ3 && GetLowestPointAfterDailyHigh() == N15ZZZ1 )|| 
-       ( M5LowerLow_on_M1timefame() == N30ZZZ3 && GetLowestPointAfterDailyHigh() == N30ZZZ1 )||  
-        ( M5LowerLow_on_M1timefame() == G1ZZZ3 && GetLowestPointAfterDailyHigh() == G1ZZZ1 )||
-        ( M5LowerLow_on_M1timefame() == G4ZZZ3 && GetLowestPointAfterDailyHigh() == G4ZZZ1 )||
-        ( GetLowestPointAfterDailyHigh() == N1ZZZ3 && M5LowerLow_on_M1timefame() == N1ZZZ1 )||
-         ( GetLowestPointAfterDailyHigh() == N5ZZZ3 && M5LowerLow_on_M1timefame() == N5ZZZ1 )||
-         ( GetLowestPointAfterDailyHigh() == N15ZZZ3 && M5LowerLow_on_M1timefame() == N15ZZZ1 )||
-         ( GetLowestPointAfterDailyHigh() == N30ZZZ3 && M5LowerLow_on_M1timefame() == N30ZZZ1 )||
-        ( GetLowestPointAfterDailyHigh() == G1ZZZ3 && M5LowerLow_on_M1timefame() == G1ZZZ1 )||
-        (  GetLowestPointAfterDailyHigh() == G4ZZZ3 && M5LowerLow_on_M1timefame() == G4ZZZ1 ) )
    
  
   
@@ -14852,19 +14839,7 @@ if(potentialBuyCond308)
         && GBPUSD_GetHighestPointAfterDailyLowTimeOnM1() > 0 && EURUSD_GetHighestPointAfterDailyLowTimeOnM1() > 0 && MathAbs((double)(GBPUSD_GetHighestPointAfterDailyLowTimeOnM1() - EURUSD_GetHighestPointAfterDailyLowTimeOnM1())) <= 30 * 60
         
         
-      &&  (( M5HigherHigh_on_M1timeframe() == N1ZZZ3 && GetHighestPointAfterDailyLow() == N1ZZZ1 ) ||
- ( M5HigherHigh_on_M1timeframe() == N5ZZZ3 && GetHighestPointAfterDailyLow() == N5ZZZ1 ) ||
- ( M5HigherHigh_on_M1timeframe() == N15ZZZ3 && GetHighestPointAfterDailyLow() == N15ZZZ1 ) || 
- ( M5HigherHigh_on_M1timeframe() == N30ZZZ3 && GetHighestPointAfterDailyLow() == N30ZZZ1 ) ||  
- ( M5HigherHigh_on_M1timeframe() == G1ZZZ3 && GetHighestPointAfterDailyLow() == G1ZZZ1 ) ||
- ( M5HigherHigh_on_M1timeframe() == G4ZZZ3 && GetHighestPointAfterDailyLow() == G4ZZZ1 ) ||
- ( GetHighestPointAfterDailyLow() == N1ZZZ3 && M5HigherHigh_on_M1timeframe() == N1ZZZ1 ) ||
- ( GetHighestPointAfterDailyLow() == N5ZZZ3 && M5HigherHigh_on_M1timeframe() == N5ZZZ1 ) ||
- ( GetHighestPointAfterDailyLow() == N15ZZZ3 && M5HigherHigh_on_M1timeframe() == N15ZZZ1 ) ||
- ( GetHighestPointAfterDailyLow() == N30ZZZ3 && M5HigherHigh_on_M1timeframe() == N30ZZZ1 ) ||
- ( GetHighestPointAfterDailyLow() == G1ZZZ3 && M5HigherHigh_on_M1timeframe() == G1ZZZ1 ) ||
- ( GetHighestPointAfterDailyLow() == G4ZZZ3 && M5HigherHigh_on_M1timeframe() == G4ZZZ1 ))
-        
+    
          &&  IsSellCondHigh307Unbreached(sellCondHigh307, sellCondTime307) == true && sellCondMet307 == true 
          
 
