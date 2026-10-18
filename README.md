@@ -11601,7 +11601,7 @@ datetime EURUSD_GetG4ZZZ3ZigZagTime()
 //+------------------------------------------------------------------+
 
 // Shift of largest bullish GBPUSD M1 candle in last N completed bars
-int GBPUSD_GetLargestBullishM1_Shift(int bars = 10)
+int GBPUSD_GetLargestBullishM1_Shift(int bars = 20)
 {
    double largestBody = -1.0;
    int    largestShift = -1;
@@ -11624,35 +11624,35 @@ int GBPUSD_GetLargestBullishM1_Shift(int bars = 10)
    return largestShift;
 }
 
-double GBPUSD_GetLargestBullishM1_Open(int bars = 10)
+double GBPUSD_GetLargestBullishM1_Open(int bars = 20)
 {
    int shift = GBPUSD_GetLargestBullishM1_Shift(bars);
    if(shift < 0) return 0;
    return iOpen("GBPUSD", PERIOD_M1, shift);
 }
 
-double GBPUSD_GetLargestBullishM1_High(int bars = 10)
+double GBPUSD_GetLargestBullishM1_High(int bars = 20)
 {
    int shift = GBPUSD_GetLargestBullishM1_Shift(bars);
    if(shift < 0) return 0;
    return iHigh("GBPUSD", PERIOD_M1, shift);
 }
 
-double GBPUSD_GetLargestBullishM1_Low(int bars = 10)
+double GBPUSD_GetLargestBullishM1_Low(int bars = 20)
 {
    int shift = GBPUSD_GetLargestBullishM1_Shift(bars);
    if(shift < 0) return 0;
    return iLow("GBPUSD", PERIOD_M1, shift);
 }
 
-double GBPUSD_GetLargestBullishM1_Close(int bars = 10)
+double GBPUSD_GetLargestBullishM1_Close(int bars = 20)
 {
    int shift = GBPUSD_GetLargestBullishM1_Shift(bars);
    if(shift < 0) return 0;
    return iClose("GBPUSD", PERIOD_M1, shift);
 }
 
-datetime GBPUSD_GetLargestBullishM1_Time(int bars = 10)
+datetime GBPUSD_GetLargestBullishM1_Time(int bars = 20)
 {
    int shift = GBPUSD_GetLargestBullishM1_Shift(bars);
    if(shift < 0) return 0;
@@ -11664,7 +11664,7 @@ datetime GBPUSD_GetLargestBullishM1_Time(int bars = 10)
 //+------------------------------------------------------------------+
 
 // Shift of largest bearish GBPUSD M1 candle in last N completed bars
-int GBPUSD_GetLargestBearishM1_Shift(int bars = 10)
+int GBPUSD_GetLargestBearishM1_Shift(int bars = 20)
 {
    double largestBody = -1.0;
    int    largestShift = -1;
@@ -11687,35 +11687,35 @@ int GBPUSD_GetLargestBearishM1_Shift(int bars = 10)
    return largestShift;
 }
 
-double GBPUSD_GetLargestBearishM1_Open(int bars = 10)
+double GBPUSD_GetLargestBearishM1_Open(int bars = 20)
 {
    int shift = GBPUSD_GetLargestBearishM1_Shift(bars);
    if(shift < 0) return 0;
    return iOpen("GBPUSD", PERIOD_M1, shift);
 }
 
-double GBPUSD_GetLargestBearishM1_High(int bars = 10)
+double GBPUSD_GetLargestBearishM1_High(int bars = 20)
 {
    int shift = GBPUSD_GetLargestBearishM1_Shift(bars);
    if(shift < 0) return 0;
    return iHigh("GBPUSD", PERIOD_M1, shift);
 }
 
-double GBPUSD_GetLargestBearishM1_Low(int bars = 10)
+double GBPUSD_GetLargestBearishM1_Low(int bars = 20)
 {
    int shift = GBPUSD_GetLargestBearishM1_Shift(bars);
    if(shift < 0) return 0;
    return iLow("GBPUSD", PERIOD_M1, shift);
 }
 
-double GBPUSD_GetLargestBearishM1_Close(int bars = 10)
+double GBPUSD_GetLargestBearishM1_Close(int bars = 20)
 {
    int shift = GBPUSD_GetLargestBearishM1_Shift(bars);
    if(shift < 0) return 0;
    return iClose("GBPUSD", PERIOD_M1, shift);
 }
 
-datetime GBPUSD_GetLargestBearishM1_Time(int bars = 10)
+datetime GBPUSD_GetLargestBearishM1_Time(int bars = 20)
 {
    int shift = GBPUSD_GetLargestBearishM1_Shift(bars);
    if(shift < 0) return 0;
@@ -11728,7 +11728,7 @@ datetime GBPUSD_GetLargestBearishM1_Time(int bars = 10)
  //+------------------------------------------------------------------+
 //| Average Candle Body (M1)                                        |
 //+------------------------------------------------------------------+
-double GetAverageBody(int bars = 10)
+double GetAverageBody(int bars = 20)
 {
    double sum = 0;
 
@@ -11748,7 +11748,7 @@ double GetAverageBody(int bars = 10)
  //+------------------------------------------------------------------+
 //| Find shift of largest bullish M1 candle in last 20 completed bars|
 //+------------------------------------------------------------------+
-int GetLargestBullishM1_Shift(int bars = 10)
+int GetLargestBullishM1_Shift(int bars = 20)
 {
    double largestBody = -1.0;
    int largestShift = -1;
@@ -11778,7 +11778,7 @@ int GetLargestBullishM1_Shift(int bars = 10)
 //+------------------------------------------------------------------+
 //| Largest Bullish M1 Candle - Open                                |
 //+------------------------------------------------------------------+
-double GetLargestBullishM1_Open(int bars = 10)
+double GetLargestBullishM1_Open(int bars = 20)
 {
    int shift = GetLargestBullishM1_Shift(bars);
 
@@ -11792,7 +11792,7 @@ double GetLargestBullishM1_Open(int bars = 10)
 //+------------------------------------------------------------------+
 //| Largest Bullish M1 Candle - High                                |
 //+------------------------------------------------------------------+
-double GetLargestBullishM1_High(int bars = 10)
+double GetLargestBullishM1_High(int bars = 20)
 {
    int shift = GetLargestBullishM1_Shift(bars);
 
@@ -11806,7 +11806,7 @@ double GetLargestBullishM1_High(int bars = 10)
 //+------------------------------------------------------------------+
 //| Largest Bullish M1 Candle - Low                                 |
 //+------------------------------------------------------------------+
-double GetLargestBullishM1_Low(int bars = 10)
+double GetLargestBullishM1_Low(int bars = 20)
 {
    int shift = GetLargestBullishM1_Shift(bars);
 
@@ -11820,7 +11820,7 @@ double GetLargestBullishM1_Low(int bars = 10)
 //+------------------------------------------------------------------+
 //| Largest Bullish M1 Candle - Close                               |
 //+------------------------------------------------------------------+
-double GetLargestBullishM1_Close(int bars = 10)
+double GetLargestBullishM1_Close(int bars = 20)
 {
    int shift = GetLargestBullishM1_Shift(bars);
 
@@ -11834,7 +11834,7 @@ double GetLargestBullishM1_Close(int bars = 10)
 //+------------------------------------------------------------------+
 //| Largest Bullish M1 Candle - Time                                |
 //+------------------------------------------------------------------+
-datetime GetLargestBullishM1_Time(int bars = 10)
+datetime GetLargestBullishM1_Time(int bars = 20)
 {
    int shift = GetLargestBullishM1_Shift(bars);
 
@@ -11849,7 +11849,7 @@ datetime GetLargestBullishM1_Time(int bars = 10)
 //+------------------------------------------------------------------+
 //| Find shift of largest bearish M1 candle in last 20 completed bars|
 //+------------------------------------------------------------------+
-int GetLargestBearishM1_Shift(int bars = 10)
+int GetLargestBearishM1_Shift(int bars = 20)
 {
    double largestBody = -1.0;
    int largestShift = -1;
@@ -11879,7 +11879,7 @@ int GetLargestBearishM1_Shift(int bars = 10)
 //+------------------------------------------------------------------+
 //| Largest Bearish M1 Candle - Open                                |
 //+------------------------------------------------------------------+
-double GetLargestBearishM1_Open(int bars = 10)
+double GetLargestBearishM1_Open(int bars = 20)
 {
    int shift = GetLargestBearishM1_Shift(bars);
 
@@ -11893,7 +11893,7 @@ double GetLargestBearishM1_Open(int bars = 10)
 //+------------------------------------------------------------------+
 //| Largest Bearish M1 Candle - High                                |
 //+------------------------------------------------------------------+
-double GetLargestBearishM1_High(int bars = 10)
+double GetLargestBearishM1_High(int bars = 20)
 {
    int shift = GetLargestBearishM1_Shift(bars);
 
@@ -11907,7 +11907,7 @@ double GetLargestBearishM1_High(int bars = 10)
 //+------------------------------------------------------------------+
 //| Largest Bearish M1 Candle - Low                                 |
 //+------------------------------------------------------------------+
-double GetLargestBearishM1_Low(int bars = 10)
+double GetLargestBearishM1_Low(int bars = 20)
 {
    int shift = GetLargestBearishM1_Shift(bars);
 
@@ -11921,7 +11921,7 @@ double GetLargestBearishM1_Low(int bars = 10)
 //+------------------------------------------------------------------+
 //| Largest Bearish M1 Candle - Close                               |
 //+------------------------------------------------------------------+
-double GetLargestBearishM1_Close(int bars = 10)
+double GetLargestBearishM1_Close(int bars = 20)
 {
    int shift = GetLargestBearishM1_Shift(bars);
 
@@ -11935,7 +11935,7 @@ double GetLargestBearishM1_Close(int bars = 10)
 //+------------------------------------------------------------------+
 //| Largest Bearish M1 Candle - Time                                |
 //+------------------------------------------------------------------+
-datetime GetLargestBearishM1_Time(int bars = 10)
+datetime GetLargestBearishM1_Time(int bars = 20)
 {
    int shift = GetLargestBearishM1_Shift(bars);
 
@@ -11961,7 +11961,7 @@ datetime GetLargestBearishM1_Time(int bars = 10)
 //+------------------------------------------------------------------+
 
 // Shift of largest bullish EURUSD M1 candle in last N completed bars
-int EURUSD_GetLargestBullishM1_Shift(int bars = 10)
+int EURUSD_GetLargestBullishM1_Shift(int bars = 20)
 {
    double largestBody = -1.0;
    int    largestShift = -1;
@@ -11984,35 +11984,35 @@ int EURUSD_GetLargestBullishM1_Shift(int bars = 10)
    return largestShift;
 }
 
-double EURUSD_GetLargestBullishM1_Open(int bars = 10)
+double EURUSD_GetLargestBullishM1_Open(int bars = 20)
 {
    int shift = EURUSD_GetLargestBullishM1_Shift(bars);
    if(shift < 0) return 0;
    return iOpen("EURUSD", PERIOD_M1, shift);
 }
 
-double EURUSD_GetLargestBullishM1_High(int bars = 10)
+double EURUSD_GetLargestBullishM1_High(int bars = 20)
 {
    int shift = EURUSD_GetLargestBullishM1_Shift(bars);
    if(shift < 0) return 0;
    return iHigh("EURUSD", PERIOD_M1, shift);
 }
 
-double EURUSD_GetLargestBullishM1_Low(int bars = 10)
+double EURUSD_GetLargestBullishM1_Low(int bars = 20)
 {
    int shift = EURUSD_GetLargestBullishM1_Shift(bars);
    if(shift < 0) return 0;
    return iLow("EURUSD", PERIOD_M1, shift);
 }
 
-double EURUSD_GetLargestBullishM1_Close(int bars = 10)
+double EURUSD_GetLargestBullishM1_Close(int bars = 20)
 {
    int shift = EURUSD_GetLargestBullishM1_Shift(bars);
    if(shift < 0) return 0;
    return iClose("EURUSD", PERIOD_M1, shift);
 }
 
-datetime EURUSD_GetLargestBullishM1_Time(int bars = 10)
+datetime EURUSD_GetLargestBullishM1_Time(int bars = 20)
 {
    int shift = EURUSD_GetLargestBullishM1_Shift(bars);
    if(shift < 0) return 0;
@@ -12024,7 +12024,7 @@ datetime EURUSD_GetLargestBullishM1_Time(int bars = 10)
 //+------------------------------------------------------------------+
 
 // Shift of largest bearish EURUSD M1 candle in last N completed bars
-int EURUSD_GetLargestBearishM1_Shift(int bars = 10)
+int EURUSD_GetLargestBearishM1_Shift(int bars = 20)
 {
    double largestBody = -1.0;
    int    largestShift = -1;
@@ -12047,35 +12047,35 @@ int EURUSD_GetLargestBearishM1_Shift(int bars = 10)
    return largestShift;
 }
 
-double EURUSD_GetLargestBearishM1_Open(int bars = 10)
+double EURUSD_GetLargestBearishM1_Open(int bars = 20)
 {
    int shift = EURUSD_GetLargestBearishM1_Shift(bars);
    if(shift < 0) return 0;
    return iOpen("EURUSD", PERIOD_M1, shift);
 }
 
-double EURUSD_GetLargestBearishM1_High(int bars = 10)
+double EURUSD_GetLargestBearishM1_High(int bars = 20)
 {
    int shift = EURUSD_GetLargestBearishM1_Shift(bars);
    if(shift < 0) return 0;
    return iHigh("EURUSD", PERIOD_M1, shift);
 }
 
-double EURUSD_GetLargestBearishM1_Low(int bars = 10)
+double EURUSD_GetLargestBearishM1_Low(int bars = 20)
 {
    int shift = EURUSD_GetLargestBearishM1_Shift(bars);
    if(shift < 0) return 0;
    return iLow("EURUSD", PERIOD_M1, shift);
 }
 
-double EURUSD_GetLargestBearishM1_Close(int bars = 10)
+double EURUSD_GetLargestBearishM1_Close(int bars = 20)
 {
    int shift = EURUSD_GetLargestBearishM1_Shift(bars);
    if(shift < 0) return 0;
    return iClose("EURUSD", PERIOD_M1, shift);
 }
 
-datetime EURUSD_GetLargestBearishM1_Time(int bars = 10)
+datetime EURUSD_GetLargestBearishM1_Time(int bars = 20)
 {
    int shift = EURUSD_GetLargestBearishM1_Shift(bars);
    if(shift < 0) return 0;
@@ -14165,12 +14165,12 @@ if(potentialBuyCond308)
    {
       if(TradeTimeAllowed() == true 
         
-             &&  GBPUSD_GetLargestBullishM1_Time(10) >= GBPUSD_GetLowestPointAfterDailyHighTimeOnM1() && EURUSD_GetLargestBullishM1_Time( 10) >= EURUSD_GetLowestPointAfterDailyHighTimeOnM1()
+             &&  GBPUSD_GetLargestBullishM1_Time(20) >= GBPUSD_GetLowestPointAfterDailyHighTimeOnM1() && EURUSD_GetLargestBullishM1_Time( 20) >= EURUSD_GetLowestPointAfterDailyHighTimeOnM1()
        
        
-            &&  GBPUSD_GetLargestBullishM1_Close( 10) - GBPUSD_GetLargestBullishM1_Open(  10) > GBPUSD_GetLargestBearishM1_Open(  10) - GBPUSD_GetLargestBearishM1_Close(  10)
+            &&  GBPUSD_GetLargestBullishM1_Close( 20) - GBPUSD_GetLargestBullishM1_Open(  20) > GBPUSD_GetLargestBearishM1_Open(  20) - GBPUSD_GetLargestBearishM1_Close(  20)
               
-             &&  EURUSD_GetLargestBullishM1_Close(  10) - EURUSD_GetLargestBullishM1_Open(  10) > EURUSD_GetLargestBearishM1_Open(  10) - EURUSD_GetLargestBearishM1_Close(  10)
+             &&  EURUSD_GetLargestBullishM1_Close(  20) - EURUSD_GetLargestBullishM1_Open(  20) > EURUSD_GetLargestBearishM1_Open(  20) - EURUSD_GetLargestBearishM1_Close(  20)
 
               
        
@@ -14559,12 +14559,12 @@ if(potentialBuyCond308)
         
            
        
-        &&  GBPUSD_GetLargestBearishM1_Time(10) >= GBPUSD_GetHighestPointAfterDailyLowTimeOnM1() && EURUSD_GetLargestBearishM1_Time( 10) >= EURUSD_GetHighestPointAfterDailyLowTimeOnM1()
+        &&  GBPUSD_GetLargestBearishM1_Time(20) >= GBPUSD_GetHighestPointAfterDailyLowTimeOnM1() && EURUSD_GetLargestBearishM1_Time( 20) >= EURUSD_GetHighestPointAfterDailyLowTimeOnM1()
        
        
-            &&  GBPUSD_GetLargestBearishM1_Open( 10) - GBPUSD_GetLargestBearishM1_Close(  10) > GBPUSD_GetLargestBullishM1_Close(  10) - GBPUSD_GetLargestBearishM1_Open(  10)
+            &&  GBPUSD_GetLargestBearishM1_Open( 20) - GBPUSD_GetLargestBearishM1_Close(  20) > GBPUSD_GetLargestBullishM1_Close(  20) - GBPUSD_GetLargestBearishM1_Open(  20)
               
-            &&  EURUSD_GetLargestBearishM1_Open( 10) - EURUSD_GetLargestBearishM1_Close(  10) > EURUSD_GetLargestBullishM1_Close(  10) - EURUSD_GetLargestBearishM1_Open(  10)
+            &&  EURUSD_GetLargestBearishM1_Open( 20) - EURUSD_GetLargestBearishM1_Close(  20) > EURUSD_GetLargestBullishM1_Close(  20) - EURUSD_GetLargestBearishM1_Open(  20)
 
        
        
