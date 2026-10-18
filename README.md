@@ -12756,6 +12756,149 @@ void OnDeinit(const int reason)
 void OnTick()
 {
   
+  ///////////////GBPUSD_DAILYLONG_AND_SHORTENTRY//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  ///////////////GBPUSD_DAILYLONG_AND_SHORTENTRY///////////////////////////////////////////////////////
+
+// Find the first bar of the current day ON GBPUSD's OWN bars (same symbol/timeframe that
+// iHighest/iLowest use below), so the shift is valid whichever chart the EA is attached to.
+int GBPUSD_DayStartShift = -1;
+int GBPUSD_DayTestShift  = 0;
+int GBPUSD_BarsTotal     = iBars("GBPUSD", 0);
+
+while(GBPUSD_DayStartShift == -1 && GBPUSD_DayTestShift + 1 < GBPUSD_BarsTotal)
+  {
+   datetime GBPUSD_TimeNewer = iTime("GBPUSD", 0, GBPUSD_DayTestShift);
+   datetime GBPUSD_TimeOlder = iTime("GBPUSD", 0, GBPUSD_DayTestShift + 1);
+
+   if(GBPUSD_TimeNewer == 0 || GBPUSD_TimeOlder == 0)
+      break;   // GBPUSD history not loaded - stop instead of reading bad data
+
+   if(TimeDayOfYear(GBPUSD_TimeNewer) != TimeDayOfYear(GBPUSD_TimeOlder))
+     {
+      GBPUSD_DayStartShift = GBPUSD_DayTestShift;
+      break;
+     }
+   GBPUSD_DayTestShift++;
+  }
+
+double GBPUSD_DailyLongEntry     = 0;
+double GBPUSD_DailyShortEntry    = 0;
+bool   GBPUSD_DailyLevelsValid   = false;   // include this in your entry conditions
+
+if(GBPUSD_DayStartShift != -1)
+  {
+   // MODE_HIGH / MODE_LOW (not PRICE_HIGH / PRICE_LOW) are the correct constants for iHighest/iLowest
+   int GBPUSD_HighIdx = iHighest("GBPUSD", 0, MODE_HIGH, GBPUSD_DayStartShift - 0 + 1, 0 + 1);
+   int GBPUSD_LowIdx  = iLowest ("GBPUSD", 0, MODE_LOW,  GBPUSD_DayStartShift - 0 + 1, 0 + 1);
+
+   if(GBPUSD_HighIdx >= 0 && GBPUSD_LowIdx >= 0)
+     {
+      GBPUSD_DailyLongEntry   = iHigh("GBPUSD", 0, GBPUSD_HighIdx);
+      GBPUSD_DailyShortEntry  = iLow ("GBPUSD", 0, GBPUSD_LowIdx);
+      GBPUSD_DailyLevelsValid = (GBPUSD_DailyLongEntry > 0 && GBPUSD_DailyShortEntry > 0);
+     }
+  }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+///////////////EURUSD_DAILYLONG_AND_SHORTENTRY///////////////////////////////////////////////////////
+
+// Same logic, on EURUSD's own bars.
+int EURUSD_DayStartShift = -1;
+int EURUSD_DayTestShift  = 0;
+int EURUSD_BarsTotal     = iBars("EURUSD", 0);
+
+while(EURUSD_DayStartShift == -1 && EURUSD_DayTestShift + 1 < EURUSD_BarsTotal)
+  {
+   datetime EURUSD_TimeNewer = iTime("EURUSD", 0, EURUSD_DayTestShift);
+   datetime EURUSD_TimeOlder = iTime("EURUSD", 0, EURUSD_DayTestShift + 1);
+
+   if(EURUSD_TimeNewer == 0 || EURUSD_TimeOlder == 0)
+      break;   // EURUSD history not loaded - stop instead of reading bad data
+
+   if(TimeDayOfYear(EURUSD_TimeNewer) != TimeDayOfYear(EURUSD_TimeOlder))
+     {
+      EURUSD_DayStartShift = EURUSD_DayTestShift;
+      break;
+     }
+   EURUSD_DayTestShift++;
+  }
+
+double EURUSD_DailyLongEntry     = 0;
+double EURUSD_DailyShortEntry    = 0;
+bool   EURUSD_DailyLevelsValid   = false;   // include this in your entry conditions
+
+if(EURUSD_DayStartShift != -1)
+  {
+   int EURUSD_HighIdx = iHighest("EURUSD", 0, MODE_HIGH, EURUSD_DayStartShift - 0 + 1, 0 + 1);
+   int EURUSD_LowIdx  = iLowest ("EURUSD", 0, MODE_LOW,  EURUSD_DayStartShift - 0 + 1, 0 + 1);
+
+   if(EURUSD_HighIdx >= 0 && EURUSD_LowIdx >= 0)
+     {
+      EURUSD_DailyLongEntry   = iHigh("EURUSD", 0, EURUSD_HighIdx);
+      EURUSD_DailyShortEntry  = iLow ("EURUSD", 0, EURUSD_LowIdx);
+      EURUSD_DailyLevelsValid = (EURUSD_DailyLongEntry > 0 && EURUSD_DailyShortEntry > 0);
+     }
+  }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+///////////////CURRENT CHART: DAILYLONG_AND_SHORTENTRY///////////////////////////////////////////////
+
+// Find the first bar of the current day on the chart's own bars.
+int DayStartShift = -1;
+int DayTestShift  = 0;
+int DayBarsTotal  = iBars(NULL, 0);
+
+while(DayStartShift == -1 && DayTestShift + 1 < DayBarsTotal)
+  {
+   datetime Day_TimeNewer = iTime(NULL, 0, DayTestShift);
+   datetime Day_TimeOlder = iTime(NULL, 0, DayTestShift + 1);
+
+   if(Day_TimeNewer == 0 || Day_TimeOlder == 0)
+      break;   // history not loaded - stop instead of reading bad data
+
+   if(TimeDayOfYear(Day_TimeNewer) != TimeDayOfYear(Day_TimeOlder))
+     {
+      DayStartShift = DayTestShift;
+      break;
+     }
+   DayTestShift++;
+  }
+
+double DailyLongEntry   = 0;
+double DailyShortEntry  = 0;
+bool   DailyLevelsValid = false;   // include this in your entry conditions
+
+if(DayStartShift != -1)
+  {
+   // MODE_HIGH / MODE_LOW (not PRICE_HIGH / PRICE_LOW) are the correct constants for iHighest/iLowest
+   int Day_HighIdx = iHighest(NULL, 0, MODE_HIGH, DayStartShift - 0 + 1, 0 + 1);
+   int Day_LowIdx  = iLowest (NULL, 0, MODE_LOW,  DayStartShift - 0 + 1, 0 + 1);
+
+   if(Day_HighIdx >= 0 && Day_LowIdx >= 0)
+     {
+      DailyLongEntry   = iHigh(NULL, 0, Day_HighIdx);
+      DailyShortEntry  = iLow (NULL, 0, Day_LowIdx);
+      DailyLevelsValid = (DailyLongEntry > 0 && DailyShortEntry > 0);
+     }
+  }
+
+
+//
+   ObjectDelete(" DayStartShift ");
+   ObjectCreate(" DayStartShift ",OBJ_VLINE,0,Time[DayStartShift],0);
+   ObjectSet(" DayStartShift ",OBJPROP_COLOR,Yellow );
+   ObjectSet(" DayStartShift ",OBJPROP_STYLE,STYLE_DASH);
+
+ 
+ 
+ //
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+  
    
   DrawBearishVolumeLine();
   DrawBullishVolumeLine() ;
@@ -14165,6 +14308,14 @@ if(potentialBuyCond308)
    {
       if(TradeTimeAllowed() == true 
         
+          
+           && iTime("GBPUSD", 0, iHighest("GBPUSD", 0, MODE_HIGH, DayStartShift + 1, 1)) > iTime("GBPUSD", 0, iLowest("GBPUSD", 0, MODE_LOW, DayStartShift + 1, 1))
+  
+               && iTime("EURUSD", 0, iHighest("EURUSD", 0, MODE_HIGH, DayStartShift + 1, 1)) > iTime("EURUSD", 0, iLowest("EURUSD", 0, MODE_LOW, DayStartShift + 1, 1))
+
+     
+          
+          
              &&  GBPUSD_GetLargestBullishM1_Time(20) >= GBPUSD_GetLowestPointAfterDailyHighTimeOnM1() && EURUSD_GetLargestBullishM1_Time( 20) >= EURUSD_GetLowestPointAfterDailyHighTimeOnM1()
        
        
@@ -14557,7 +14708,11 @@ if(potentialBuyCond308)
    {
       if(TradeTimeAllowed() == true 
         
-           
+           && iTime("GBPUSD", 0, iLowest("GBPUSD", 0, MODE_LOW, DayStartShift + 1, 1)) > iTime("GBPUSD", 0, iHighest("GBPUSD", 0, MODE_HIGH, DayStartShift + 1, 1))
+  
+        && iTime("EURUSD", 0, iLowest("EURUSD", 0, MODE_LOW, DayStartShift + 1, 1)) > iTime("EURUSD", 0, iHighest("EURUSD", 0, MODE_HIGH, DayStartShift + 1, 1))
+
+     
        
         &&  GBPUSD_GetLargestBearishM1_Time(20) >= GBPUSD_GetHighestPointAfterDailyLowTimeOnM1() && EURUSD_GetLargestBearishM1_Time( 20) >= EURUSD_GetHighestPointAfterDailyLowTimeOnM1()
        
