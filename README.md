@@ -14368,6 +14368,130 @@ if(potentialBuyCond308)
            ( H4zigzagLongEntry  > 0 && iOpen(NULL, PERIOD_M1, 0) < H4zigzagLongEntry  && iClose(NULL, PERIOD_M1, 0) > H4zigzagLongEntry  && H4ZZZ3  == GetLowestPointAfterDailyHigh() && ( H4ZZZ1  < PivotAtLowestPointAfterDailyHighM1() || H4ZZZ1  < GetHighAtLowestPointAfterDailyHighM1() ) ) ) 
 
         
+ //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        
+        
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// BUY SIDE  (price vs price: ZZZ3 == low at lowest point after daily high)
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  && ( ( GBPUSD_GetLowAtLowestPointAfterDailyHighM1() > 0 && GBPUSD_GetN1ZZZ3ZigZagStopLossLevel()  == GBPUSD_GetLowAtLowestPointAfterDailyHighM1() && GBPUSD_GetN1ZZZ2ZigZagStopLossLevel() > 0 && iOpen("GBPUSD", PERIOD_M1, 0) < GBPUSD_GetN1ZZZ2ZigZagStopLossLevel() && iClose("GBPUSD", PERIOD_M1, 0) > GBPUSD_GetN1ZZZ2ZigZagStopLossLevel()
+        
+         && GBPUSD_GetN1ZZZ2ZigZagStopLossLevel() > GBPUSD_GetN1ZZZ1ZigZagStopLossLevel() &&  GBPUSD_GetN1ZZZ2ZigZagStopLossLevel() > GBPUSD_GetN1ZZZ3ZigZagStopLossLevel()
+        
+       
+                            &&  GBPUSD_GetN1ZZZ2ZigZagTime() > GBPUSD_GetLowestPointAfterDailyHighTimeOnM1() 
+       
+        &&  GBPUSD_GetN1ZZZ1ZigZagStopLossLevel() > GBPUSD_GetN1ZZZ3ZigZagStopLossLevel() )||
+        
+         ( GBPUSD_GetLowAtLowestPointAfterDailyHighM1() > 0 && GBPUSD_GetN5ZZZ3ZigZagStopLossLevel()  == GBPUSD_GetLowAtLowestPointAfterDailyHighM1() && GBPUSD_GetN5ZZZ2ZigZagStopLossLevel() > 0 && iOpen("GBPUSD", PERIOD_M1, 0) < GBPUSD_GetN5ZZZ2ZigZagStopLossLevel() && iClose("GBPUSD", PERIOD_M1, 0) > GBPUSD_GetN5ZZZ2ZigZagStopLossLevel()
+        
+         && GBPUSD_GetN5ZZZ2ZigZagStopLossLevel() > GBPUSD_GetN5ZZZ1ZigZagStopLossLevel() &&  GBPUSD_GetN5ZZZ2ZigZagStopLossLevel() > GBPUSD_GetN5ZZZ3ZigZagStopLossLevel()
+        
+       
+                            &&  GBPUSD_GetN5ZZZ2ZigZagTime() > GBPUSD_GetLowestPointAfterDailyHighTimeOnM1() 
+       
+        &&  GBPUSD_GetN5ZZZ1ZigZagStopLossLevel() > GBPUSD_GetN5ZZZ3ZigZagStopLossLevel() )||
+        
+         ( GBPUSD_GetLowAtLowestPointAfterDailyHighM1() > 0 && GBPUSD_GetN15ZZZ3ZigZagStopLossLevel()  == GBPUSD_GetLowAtLowestPointAfterDailyHighM1() && GBPUSD_GetN15ZZZ2ZigZagStopLossLevel() > 0 && iOpen("GBPUSD", PERIOD_M1, 0) < GBPUSD_GetN15ZZZ2ZigZagStopLossLevel() && iClose("GBPUSD", PERIOD_M1, 0) > GBPUSD_GetN15ZZZ2ZigZagStopLossLevel()
+        
+         && GBPUSD_GetN15ZZZ2ZigZagStopLossLevel() > GBPUSD_GetN15ZZZ1ZigZagStopLossLevel() &&  GBPUSD_GetN15ZZZ2ZigZagStopLossLevel() > GBPUSD_GetN15ZZZ3ZigZagStopLossLevel()
+        
+       
+                            &&  GBPUSD_GetN15ZZZ2ZigZagTime() > GBPUSD_GetLowestPointAfterDailyHighTimeOnM1() 
+       
+        &&  GBPUSD_GetN15ZZZ1ZigZagStopLossLevel() > GBPUSD_GetN15ZZZ3ZigZagStopLossLevel() )||
+        
+         ( GBPUSD_GetLowAtLowestPointAfterDailyHighM1() > 0 && GBPUSD_GetN30ZZZ3ZigZagStopLossLevel()  == GBPUSD_GetLowAtLowestPointAfterDailyHighM1() && GBPUSD_GetN30ZZZ2ZigZagStopLossLevel() > 0 && iOpen("GBPUSD", PERIOD_M1, 0) < GBPUSD_GetN30ZZZ2ZigZagStopLossLevel() && iClose("GBPUSD", PERIOD_M1, 0) > GBPUSD_GetN30ZZZ2ZigZagStopLossLevel()
+        
+         && GBPUSD_GetN30ZZZ2ZigZagStopLossLevel() > GBPUSD_GetN30ZZZ1ZigZagStopLossLevel() &&  GBPUSD_GetN30ZZZ2ZigZagStopLossLevel() > GBPUSD_GetN30ZZZ3ZigZagStopLossLevel()
+        
+       
+                            &&  GBPUSD_GetN30ZZZ2ZigZagTime() > GBPUSD_GetLowestPointAfterDailyHighTimeOnM1() 
+       
+        &&  GBPUSD_GetN30ZZZ1ZigZagStopLossLevel() > GBPUSD_GetN30ZZZ3ZigZagStopLossLevel() )||
+        
+         ( GBPUSD_GetLowAtLowestPointAfterDailyHighM1() > 0 && GBPUSD_GetG1ZZZ3ZigZagStopLossLevel()  == GBPUSD_GetLowAtLowestPointAfterDailyHighM1() && GBPUSD_GetG1ZZZ2ZigZagStopLossLevel() > 0 && iOpen("GBPUSD", PERIOD_M1, 0) < GBPUSD_GetG1ZZZ2ZigZagStopLossLevel() && iClose("GBPUSD", PERIOD_M1, 0) > GBPUSD_GetG1ZZZ2ZigZagStopLossLevel()
+        
+         && GBPUSD_GetG1ZZZ2ZigZagStopLossLevel() > GBPUSD_GetG1ZZZ1ZigZagStopLossLevel() &&  GBPUSD_GetG1ZZZ2ZigZagStopLossLevel() > GBPUSD_GetG1ZZZ3ZigZagStopLossLevel()
+        
+       
+                            &&  GBPUSD_GetG1ZZZ2ZigZagTime() > GBPUSD_GetLowestPointAfterDailyHighTimeOnM1() 
+       
+        &&  GBPUSD_GetG1ZZZ1ZigZagStopLossLevel() > GBPUSD_GetG1ZZZ3ZigZagStopLossLevel() )||
+        
+         ( GBPUSD_GetLowAtLowestPointAfterDailyHighM1() > 0 && GBPUSD_GetG4ZZZ3ZigZagStopLossLevel()  == GBPUSD_GetLowAtLowestPointAfterDailyHighM1() && GBPUSD_GetG4ZZZ2ZigZagStopLossLevel() > 0 && iOpen("GBPUSD", PERIOD_M1, 0) < GBPUSD_GetG4ZZZ2ZigZagStopLossLevel() && iClose("GBPUSD", PERIOD_M1, 0) > GBPUSD_GetG4ZZZ2ZigZagStopLossLevel()
+        
+         && GBPUSD_GetG4ZZZ2ZigZagStopLossLevel() > GBPUSD_GetG4ZZZ1ZigZagStopLossLevel() &&  GBPUSD_GetG4ZZZ2ZigZagStopLossLevel() > GBPUSD_GetG4ZZZ3ZigZagStopLossLevel()
+        
+       
+                            &&  GBPUSD_GetG4ZZZ2ZigZagTime() > GBPUSD_GetLowestPointAfterDailyHighTimeOnM1() 
+       
+        &&  GBPUSD_GetG4ZZZ1ZigZagStopLossLevel() > GBPUSD_GetG4ZZZ3ZigZagStopLossLevel() )||
+        
+         ( GBPUSD_GetLowAtLowestPointAfterDailyHighM1() > 0 && GBPUSD_GetZZZ3ZigZagStopLossLevel()  == GBPUSD_GetLowAtLowestPointAfterDailyHighM1() && GBPUSD_GetZZZ2ZigZagStopLossLevel() > 0 && iOpen("GBPUSD", PERIOD_M1, 0) < GBPUSD_GetZZZ2ZigZagStopLossLevel() && iClose("GBPUSD", PERIOD_M1, 0) > GBPUSD_GetZZZ2ZigZagStopLossLevel()
+        
+         && GBPUSD_GetZZZ2ZigZagStopLossLevel() > GBPUSD_GetZZZ1ZigZagStopLossLevel() &&  GBPUSD_GetZZZ2ZigZagStopLossLevel() > GBPUSD_GetZZZ3ZigZagStopLossLevel()
+        
+       
+                            &&  GBPUSD_GetZZZ2ZigZagTime() > GBPUSD_GetLowestPointAfterDailyHighTimeOnM1() 
+       
+        &&  GBPUSD_GetZZZ1ZigZagStopLossLevel() > GBPUSD_GetZZZ3ZigZagStopLossLevel() )||
+        
+         ( GBPUSD_GetLowAtLowestPointAfterDailyHighM1() > 0 && GBPUSD_GetM5ZZZ3ZigZagStopLossLevel()  == GBPUSD_GetLowAtLowestPointAfterDailyHighM1() && GBPUSD_GetM5ZZZ2ZigZagStopLossLevel() > 0 && iOpen("GBPUSD", PERIOD_M1, 0) < GBPUSD_GetM5ZZZ2ZigZagStopLossLevel() && iClose("GBPUSD", PERIOD_M1, 0) > GBPUSD_GetM5ZZZ2ZigZagStopLossLevel()
+        
+         && GBPUSD_GetM5ZZZ2ZigZagStopLossLevel() > GBPUSD_GetM5ZZZ1ZigZagStopLossLevel() &&  GBPUSD_GetM5ZZZ2ZigZagStopLossLevel() > GBPUSD_GetM5ZZZ3ZigZagStopLossLevel()
+        
+       
+                            &&  GBPUSD_GetM5ZZZ2ZigZagTime() > GBPUSD_GetLowestPointAfterDailyHighTimeOnM1() 
+       
+        &&  GBPUSD_GetM5ZZZ1ZigZagStopLossLevel() > GBPUSD_GetM5ZZZ3ZigZagStopLossLevel() )||
+        
+         ( GBPUSD_GetLowAtLowestPointAfterDailyHighM1() > 0 && GBPUSD_GetM15ZZZ3ZigZagStopLossLevel()  == GBPUSD_GetLowAtLowestPointAfterDailyHighM1() && GBPUSD_GetM15ZZZ2ZigZagStopLossLevel() > 0 && iOpen("GBPUSD", PERIOD_M1, 0) < GBPUSD_GetM15ZZZ2ZigZagStopLossLevel() && iClose("GBPUSD", PERIOD_M1, 0) > GBPUSD_GetM15ZZZ2ZigZagStopLossLevel()
+        
+         && GBPUSD_GetM15ZZZ2ZigZagStopLossLevel() > GBPUSD_GetM15ZZZ1ZigZagStopLossLevel() &&  GBPUSD_GetM15ZZZ2ZigZagStopLossLevel() > GBPUSD_GetM15ZZZ3ZigZagStopLossLevel()
+        
+       
+                            &&  GBPUSD_GetM15ZZZ2ZigZagTime() > GBPUSD_GetLowestPointAfterDailyHighTimeOnM1() 
+       
+        &&  GBPUSD_GetM15ZZZ1ZigZagStopLossLevel() > GBPUSD_GetM15ZZZ3ZigZagStopLossLevel() )||
+        
+         ( GBPUSD_GetLowAtLowestPointAfterDailyHighM1() > 0 && GBPUSD_GetM30ZZZ3ZigZagStopLossLevel()  == GBPUSD_GetLowAtLowestPointAfterDailyHighM1() && GBPUSD_GetM30ZZZ2ZigZagStopLossLevel() > 0 && iOpen("GBPUSD", PERIOD_M1, 0) < GBPUSD_GetM30ZZZ2ZigZagStopLossLevel() && iClose("GBPUSD", PERIOD_M1, 0) > GBPUSD_GetM30ZZZ2ZigZagStopLossLevel()
+        
+         && GBPUSD_GetM30ZZZ2ZigZagStopLossLevel() > GBPUSD_GetM30ZZZ1ZigZagStopLossLevel() &&  GBPUSD_GetM30ZZZ2ZigZagStopLossLevel() > GBPUSD_GetM30ZZZ3ZigZagStopLossLevel()
+        
+       
+                            &&  GBPUSD_GetM30ZZZ2ZigZagTime() > GBPUSD_GetLowestPointAfterDailyHighTimeOnM1() 
+       
+        &&  GBPUSD_GetM30ZZZ1ZigZagStopLossLevel() > GBPUSD_GetM30ZZZ3ZigZagStopLossLevel() )||
+        
+         ( GBPUSD_GetLowAtLowestPointAfterDailyHighM1() > 0 && GBPUSD_GetH1ZZZ3ZigZagStopLossLevel()  == GBPUSD_GetLowAtLowestPointAfterDailyHighM1() && GBPUSD_GetH1ZZZ2ZigZagStopLossLevel() > 0 && iOpen("GBPUSD", PERIOD_M1, 0) < GBPUSD_GetH1ZZZ2ZigZagStopLossLevel() && iClose("GBPUSD", PERIOD_M1, 0) > GBPUSD_GetH1ZZZ2ZigZagStopLossLevel()
+        
+         && GBPUSD_GetH1ZZZ2ZigZagStopLossLevel() > GBPUSD_GetH1ZZZ1ZigZagStopLossLevel() &&  GBPUSD_GetH1ZZZ2ZigZagStopLossLevel() > GBPUSD_GetH1ZZZ3ZigZagStopLossLevel()
+        
+       
+                            &&  GBPUSD_GetH1ZZZ2ZigZagTime() > GBPUSD_GetLowestPointAfterDailyHighTimeOnM1() 
+       
+        &&  GBPUSD_GetH1ZZZ1ZigZagStopLossLevel() > GBPUSD_GetH1ZZZ3ZigZagStopLossLevel() )||
+        
+         ( GBPUSD_GetLowAtLowestPointAfterDailyHighM1() > 0 && GBPUSD_GetH4ZZZ3ZigZagStopLossLevel()  == GBPUSD_GetLowAtLowestPointAfterDailyHighM1() && GBPUSD_GetH4ZZZ2ZigZagStopLossLevel() > 0 && iOpen("GBPUSD", PERIOD_M1, 0) < GBPUSD_GetH4ZZZ2ZigZagStopLossLevel() && iClose("GBPUSD", PERIOD_M1, 0) > GBPUSD_GetH4ZZZ2ZigZagStopLossLevel()
+        
+         && GBPUSD_GetH4ZZZ2ZigZagStopLossLevel() > GBPUSD_GetH4ZZZ1ZigZagStopLossLevel() &&  GBPUSD_GetH4ZZZ2ZigZagStopLossLevel() > GBPUSD_GetH4ZZZ3ZigZagStopLossLevel()
+        
+       
+                            &&  GBPUSD_GetH4ZZZ2ZigZagTime() > GBPUSD_GetLowestPointAfterDailyHighTimeOnM1() 
+       
+        &&  GBPUSD_GetH4ZZZ1ZigZagStopLossLevel() > GBPUSD_GetH4ZZZ3ZigZagStopLossLevel() ))
+
+
+        
+ //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+       
+        
+        
+        
         
         
           && ( ( ( GBPUSD_GetZZZ2ZigZagTime() >= TIMEof_M5LowerLow_on_M1timefame() && iOpen("GBPUSD", PERIOD_M1, 0) < GBPUSD_GetZZZ2ZigZagStopLossLevel() && iClose("GBPUSD", PERIOD_M1, 0) >  GBPUSD_GetZZZ2ZigZagStopLossLevel() 
@@ -14759,6 +14883,127 @@ if(potentialBuyCond308)
            ( H4zigzagShortEntry  > 0 && iOpen(NULL, PERIOD_M1, 0) > H4zigzagShortEntry  && iClose(NULL, PERIOD_M1, 0) < H4zigzagShortEntry  && H4ZZZ3  == GetHighestPointAfterDailyLow() && ( H4ZZZ1  > PivotAtHighestPointAfterDailyLowM1() || H4ZZZ1  > GetLowAtHighestPointAfterDailyLowM1() ) ) ) 
 
         
+        
+        
+        
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// SELL SIDE (price vs price: ZZZ3 == high at highest point after daily low)
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  && ( ( GBPUSD_GetHighAtHighestPointAfterDailyLowM1() > 0 && GBPUSD_GetN1ZZZ3ZigZagStopLossLevel()  == GBPUSD_GetHighAtHighestPointAfterDailyLowM1() && GBPUSD_GetN1ZZZ2ZigZagStopLossLevel() > 0 && iOpen("GBPUSD", PERIOD_M1, 0) > GBPUSD_GetN1ZZZ2ZigZagStopLossLevel() && iClose("GBPUSD", PERIOD_M1, 0) < GBPUSD_GetN1ZZZ2ZigZagStopLossLevel()
+        
+         && GBPUSD_GetN1ZZZ2ZigZagStopLossLevel() < GBPUSD_GetN1ZZZ1ZigZagStopLossLevel() &&  GBPUSD_GetN1ZZZ2ZigZagStopLossLevel() < GBPUSD_GetN1ZZZ3ZigZagStopLossLevel()
+        
+       
+                            &&  GBPUSD_GetN1ZZZ2ZigZagTime() > GBPUSD_GetHighestPointAfterDailyLowTimeOnM1() 
+       
+        &&  GBPUSD_GetN1ZZZ1ZigZagStopLossLevel() < GBPUSD_GetN1ZZZ3ZigZagStopLossLevel() )||
+        
+         ( GBPUSD_GetHighAtHighestPointAfterDailyLowM1() > 0 && GBPUSD_GetN5ZZZ3ZigZagStopLossLevel()  == GBPUSD_GetHighAtHighestPointAfterDailyLowM1() && GBPUSD_GetN5ZZZ2ZigZagStopLossLevel() > 0 && iOpen("GBPUSD", PERIOD_M1, 0) > GBPUSD_GetN5ZZZ2ZigZagStopLossLevel() && iClose("GBPUSD", PERIOD_M1, 0) < GBPUSD_GetN5ZZZ2ZigZagStopLossLevel()
+        
+         && GBPUSD_GetN5ZZZ2ZigZagStopLossLevel() < GBPUSD_GetN5ZZZ1ZigZagStopLossLevel() &&  GBPUSD_GetN5ZZZ2ZigZagStopLossLevel() < GBPUSD_GetN5ZZZ3ZigZagStopLossLevel()
+        
+       
+                            &&  GBPUSD_GetN5ZZZ2ZigZagTime() > GBPUSD_GetHighestPointAfterDailyLowTimeOnM1() 
+       
+        &&  GBPUSD_GetN5ZZZ1ZigZagStopLossLevel() < GBPUSD_GetN5ZZZ3ZigZagStopLossLevel() )||
+        
+         ( GBPUSD_GetHighAtHighestPointAfterDailyLowM1() > 0 && GBPUSD_GetN15ZZZ3ZigZagStopLossLevel()  == GBPUSD_GetHighAtHighestPointAfterDailyLowM1() && GBPUSD_GetN15ZZZ2ZigZagStopLossLevel() > 0 && iOpen("GBPUSD", PERIOD_M1, 0) > GBPUSD_GetN15ZZZ2ZigZagStopLossLevel() && iClose("GBPUSD", PERIOD_M1, 0) < GBPUSD_GetN15ZZZ2ZigZagStopLossLevel()
+        
+         && GBPUSD_GetN15ZZZ2ZigZagStopLossLevel() < GBPUSD_GetN15ZZZ1ZigZagStopLossLevel() &&  GBPUSD_GetN15ZZZ2ZigZagStopLossLevel() < GBPUSD_GetN15ZZZ3ZigZagStopLossLevel()
+        
+       
+                            &&  GBPUSD_GetN15ZZZ2ZigZagTime() > GBPUSD_GetHighestPointAfterDailyLowTimeOnM1() 
+       
+        &&  GBPUSD_GetN15ZZZ1ZigZagStopLossLevel() < GBPUSD_GetN15ZZZ3ZigZagStopLossLevel() )||
+        
+         ( GBPUSD_GetHighAtHighestPointAfterDailyLowM1() > 0 && GBPUSD_GetN30ZZZ3ZigZagStopLossLevel()  == GBPUSD_GetHighAtHighestPointAfterDailyLowM1() && GBPUSD_GetN30ZZZ2ZigZagStopLossLevel() > 0 && iOpen("GBPUSD", PERIOD_M1, 0) > GBPUSD_GetN30ZZZ2ZigZagStopLossLevel() && iClose("GBPUSD", PERIOD_M1, 0) < GBPUSD_GetN30ZZZ2ZigZagStopLossLevel()
+        
+         && GBPUSD_GetN30ZZZ2ZigZagStopLossLevel() < GBPUSD_GetN30ZZZ1ZigZagStopLossLevel() &&  GBPUSD_GetN30ZZZ2ZigZagStopLossLevel() < GBPUSD_GetN30ZZZ3ZigZagStopLossLevel()
+        
+       
+                            &&  GBPUSD_GetN30ZZZ2ZigZagTime() > GBPUSD_GetHighestPointAfterDailyLowTimeOnM1() 
+       
+        &&  GBPUSD_GetN30ZZZ1ZigZagStopLossLevel() < GBPUSD_GetN30ZZZ3ZigZagStopLossLevel() )||
+        
+         ( GBPUSD_GetHighAtHighestPointAfterDailyLowM1() > 0 && GBPUSD_GetG1ZZZ3ZigZagStopLossLevel()  == GBPUSD_GetHighAtHighestPointAfterDailyLowM1() && GBPUSD_GetG1ZZZ2ZigZagStopLossLevel() > 0 && iOpen("GBPUSD", PERIOD_M1, 0) > GBPUSD_GetG1ZZZ2ZigZagStopLossLevel() && iClose("GBPUSD", PERIOD_M1, 0) < GBPUSD_GetG1ZZZ2ZigZagStopLossLevel()
+        
+         && GBPUSD_GetG1ZZZ2ZigZagStopLossLevel() < GBPUSD_GetG1ZZZ1ZigZagStopLossLevel() &&  GBPUSD_GetG1ZZZ2ZigZagStopLossLevel() < GBPUSD_GetG1ZZZ3ZigZagStopLossLevel()
+        
+       
+                            &&  GBPUSD_GetG1ZZZ2ZigZagTime() > GBPUSD_GetHighestPointAfterDailyLowTimeOnM1() 
+       
+        &&  GBPUSD_GetG1ZZZ1ZigZagStopLossLevel() < GBPUSD_GetG1ZZZ3ZigZagStopLossLevel() )||
+        
+         ( GBPUSD_GetHighAtHighestPointAfterDailyLowM1() > 0 && GBPUSD_GetG4ZZZ3ZigZagStopLossLevel()  == GBPUSD_GetHighAtHighestPointAfterDailyLowM1() && GBPUSD_GetG4ZZZ2ZigZagStopLossLevel() > 0 && iOpen("GBPUSD", PERIOD_M1, 0) > GBPUSD_GetG4ZZZ2ZigZagStopLossLevel() && iClose("GBPUSD", PERIOD_M1, 0) < GBPUSD_GetG4ZZZ2ZigZagStopLossLevel()
+        
+         && GBPUSD_GetG4ZZZ2ZigZagStopLossLevel() < GBPUSD_GetG4ZZZ1ZigZagStopLossLevel() &&  GBPUSD_GetG4ZZZ2ZigZagStopLossLevel() < GBPUSD_GetG4ZZZ3ZigZagStopLossLevel()
+        
+       
+                            &&  GBPUSD_GetG4ZZZ2ZigZagTime() > GBPUSD_GetHighestPointAfterDailyLowTimeOnM1() 
+       
+        &&  GBPUSD_GetG4ZZZ1ZigZagStopLossLevel() < GBPUSD_GetG4ZZZ3ZigZagStopLossLevel() )||
+        
+         ( GBPUSD_GetHighAtHighestPointAfterDailyLowM1() > 0 && GBPUSD_GetZZZ3ZigZagStopLossLevel()  == GBPUSD_GetHighAtHighestPointAfterDailyLowM1() && GBPUSD_GetZZZ2ZigZagStopLossLevel() > 0 && iOpen("GBPUSD", PERIOD_M1, 0) > GBPUSD_GetZZZ2ZigZagStopLossLevel() && iClose("GBPUSD", PERIOD_M1, 0) < GBPUSD_GetZZZ2ZigZagStopLossLevel()
+        
+         && GBPUSD_GetZZZ2ZigZagStopLossLevel() < GBPUSD_GetZZZ1ZigZagStopLossLevel() &&  GBPUSD_GetZZZ2ZigZagStopLossLevel() < GBPUSD_GetZZZ3ZigZagStopLossLevel()
+        
+       
+                            &&  GBPUSD_GetZZZ2ZigZagTime() > GBPUSD_GetHighestPointAfterDailyLowTimeOnM1() 
+       
+        &&  GBPUSD_GetZZZ1ZigZagStopLossLevel() < GBPUSD_GetZZZ3ZigZagStopLossLevel() )||
+        
+         ( GBPUSD_GetHighAtHighestPointAfterDailyLowM1() > 0 && GBPUSD_GetM5ZZZ3ZigZagStopLossLevel()  == GBPUSD_GetHighAtHighestPointAfterDailyLowM1() && GBPUSD_GetM5ZZZ2ZigZagStopLossLevel() > 0 && iOpen("GBPUSD", PERIOD_M1, 0) > GBPUSD_GetM5ZZZ2ZigZagStopLossLevel() && iClose("GBPUSD", PERIOD_M1, 0) < GBPUSD_GetM5ZZZ2ZigZagStopLossLevel()
+        
+         && GBPUSD_GetM5ZZZ2ZigZagStopLossLevel() < GBPUSD_GetM5ZZZ1ZigZagStopLossLevel() &&  GBPUSD_GetM5ZZZ2ZigZagStopLossLevel() < GBPUSD_GetM5ZZZ3ZigZagStopLossLevel()
+        
+       
+                            &&  GBPUSD_GetM5ZZZ2ZigZagTime() > GBPUSD_GetHighestPointAfterDailyLowTimeOnM1() 
+       
+        &&  GBPUSD_GetM5ZZZ1ZigZagStopLossLevel() < GBPUSD_GetM5ZZZ3ZigZagStopLossLevel() )||
+        
+         ( GBPUSD_GetHighAtHighestPointAfterDailyLowM1() > 0 && GBPUSD_GetM15ZZZ3ZigZagStopLossLevel()  == GBPUSD_GetHighAtHighestPointAfterDailyLowM1() && GBPUSD_GetM15ZZZ2ZigZagStopLossLevel() > 0 && iOpen("GBPUSD", PERIOD_M1, 0) > GBPUSD_GetM15ZZZ2ZigZagStopLossLevel() && iClose("GBPUSD", PERIOD_M1, 0) < GBPUSD_GetM15ZZZ2ZigZagStopLossLevel()
+        
+         && GBPUSD_GetM15ZZZ2ZigZagStopLossLevel() < GBPUSD_GetM15ZZZ1ZigZagStopLossLevel() &&  GBPUSD_GetM15ZZZ2ZigZagStopLossLevel() < GBPUSD_GetM15ZZZ3ZigZagStopLossLevel()
+        
+       
+                            &&  GBPUSD_GetM15ZZZ2ZigZagTime() > GBPUSD_GetHighestPointAfterDailyLowTimeOnM1() 
+       
+        &&  GBPUSD_GetM15ZZZ1ZigZagStopLossLevel() < GBPUSD_GetM15ZZZ3ZigZagStopLossLevel() )||
+        
+         ( GBPUSD_GetHighAtHighestPointAfterDailyLowM1() > 0 && GBPUSD_GetM30ZZZ3ZigZagStopLossLevel()  == GBPUSD_GetHighAtHighestPointAfterDailyLowM1() && GBPUSD_GetM30ZZZ2ZigZagStopLossLevel() > 0 && iOpen("GBPUSD", PERIOD_M1, 0) > GBPUSD_GetM30ZZZ2ZigZagStopLossLevel() && iClose("GBPUSD", PERIOD_M1, 0) < GBPUSD_GetM30ZZZ2ZigZagStopLossLevel()
+        
+         && GBPUSD_GetM30ZZZ2ZigZagStopLossLevel() < GBPUSD_GetM30ZZZ1ZigZagStopLossLevel() &&  GBPUSD_GetM30ZZZ2ZigZagStopLossLevel() < GBPUSD_GetM30ZZZ3ZigZagStopLossLevel()
+        
+       
+                            &&  GBPUSD_GetM30ZZZ2ZigZagTime() > GBPUSD_GetHighestPointAfterDailyLowTimeOnM1() 
+       
+        &&  GBPUSD_GetM30ZZZ1ZigZagStopLossLevel() < GBPUSD_GetM30ZZZ3ZigZagStopLossLevel() )||
+        
+         ( GBPUSD_GetHighAtHighestPointAfterDailyLowM1() > 0 && GBPUSD_GetH1ZZZ3ZigZagStopLossLevel()  == GBPUSD_GetHighAtHighestPointAfterDailyLowM1() && GBPUSD_GetH1ZZZ2ZigZagStopLossLevel() > 0 && iOpen("GBPUSD", PERIOD_M1, 0) > GBPUSD_GetH1ZZZ2ZigZagStopLossLevel() && iClose("GBPUSD", PERIOD_M1, 0) < GBPUSD_GetH1ZZZ2ZigZagStopLossLevel()
+        
+         && GBPUSD_GetH1ZZZ2ZigZagStopLossLevel() < GBPUSD_GetH1ZZZ1ZigZagStopLossLevel() &&  GBPUSD_GetH1ZZZ2ZigZagStopLossLevel() < GBPUSD_GetH1ZZZ3ZigZagStopLossLevel()
+        
+       
+                            &&  GBPUSD_GetH1ZZZ2ZigZagTime() > GBPUSD_GetHighestPointAfterDailyLowTimeOnM1() 
+       
+        &&  GBPUSD_GetH1ZZZ1ZigZagStopLossLevel() < GBPUSD_GetH1ZZZ3ZigZagStopLossLevel() )||
+        
+         ( GBPUSD_GetHighAtHighestPointAfterDailyLowM1() > 0 && GBPUSD_GetH4ZZZ3ZigZagStopLossLevel()  == GBPUSD_GetHighAtHighestPointAfterDailyLowM1() && GBPUSD_GetH4ZZZ2ZigZagStopLossLevel() > 0 && iOpen("GBPUSD", PERIOD_M1, 0) > GBPUSD_GetH4ZZZ2ZigZagStopLossLevel() && iClose("GBPUSD", PERIOD_M1, 0) < GBPUSD_GetH4ZZZ2ZigZagStopLossLevel()
+        
+         && GBPUSD_GetH4ZZZ2ZigZagStopLossLevel() < GBPUSD_GetH4ZZZ1ZigZagStopLossLevel() &&  GBPUSD_GetH4ZZZ2ZigZagStopLossLevel() < GBPUSD_GetH4ZZZ3ZigZagStopLossLevel()
+        
+       
+                            &&  GBPUSD_GetH4ZZZ2ZigZagTime() > GBPUSD_GetHighestPointAfterDailyLowTimeOnM1() 
+       
+        &&  GBPUSD_GetH4ZZZ1ZigZagStopLossLevel() < GBPUSD_GetH4ZZZ3ZigZagStopLossLevel() ))
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
         
         
         
